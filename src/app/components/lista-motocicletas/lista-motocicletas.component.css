@@ -1,0 +1,145 @@
+.lista-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-lista {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-lista h2 {
+  color: #2d3748;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.estadisticas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.estadisticas p {
+  background: #f7fafc;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.estadisticas strong {
+  color: #2d3748;
+}
+
+.sin-motos {
+  text-align: center;
+  padding: 50px;
+  background: #fff;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+.grid-motocicletas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card-moto {
+  background: white;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid #e2e8f0;
+}
+
+.card-moto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.moto-icono {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-moto h3 {
+  color: #2d3748;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.moto-detalles p {
+  color: #4a5568;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.moto-detalles strong {
+  color: #2d3748;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.disponible {
+  background: #48bb78;
+  color: white;
+}
+
+.badge.no-disponible {
+  background: #fc8181;
+  color: white;
+}
+
+.alta-cilindrada {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #f6ad55, #ed8936);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid-motocicletas {
+    grid-template-columns: 1fr;
+  }
+  
+  .estadisticas {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .header-lista h2 {
+    font-size: 1.5rem;
+  }
+}

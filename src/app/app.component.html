@@ -8,4 +8,28 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <!-- <h1>Mi Aplicación Angular</h1>   -->
-<app-perfil-usuario></app-perfil-usuario>
+<div class="app-container">
+  <!-- Menú de Navegación -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🏍️</span>
+      <span class="logo-text">HondaStore</span>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/inicio" routerLinkActive="active">🏠 Inicio</a></li>
+      <li>
+        <a routerLink="/motocicletas" routerLinkActive="active">📋 Catálogo</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© {{ anio }} MotoStore - Todos los derechos reservados</p>
+  </footer>
+</div>

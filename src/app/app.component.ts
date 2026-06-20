@@ -1,23 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { DatosUsuarioService } from './services/datos-usuario.service';
-import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PerfilUsuarioComponent],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  title = 'Facello';
-
-  constructor(private datosUsuario: DatosUsuarioService) {}
-
-  ngOnInit() {
-    console.log('Estableciendo datos...');  
-    this.datosUsuario.setDatos('Mauro Facello', 'maurofachelo@gmail.com');
-    console.log('Datos establecidos:', this.datosUsuario.getNombre()); 
-  }
+export class AppComponent {
+  anio = new Date().getFullYear();
 }

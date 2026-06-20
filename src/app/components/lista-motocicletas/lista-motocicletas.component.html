@@ -1,0 +1,55 @@
+<div class="lista-container">
+  <!-- Encabezado -->
+  <div class="header-lista">
+    <h2>🏍️ Catálogo de Motocicletas</h2>
+    <div class="estadisticas">
+      <p>
+        Total: <strong>{{ totalMotocicletas }}</strong> motos
+      </p>
+      <p>
+        Disponibles: <strong>{{ motosDisponibles }}</strong>
+      </p>
+      <p>
+        No disponibles:
+        <strong>{{ totalMotocicletas - motosDisponibles }}</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- @If: Mostrar mensaje si no hay motos -->
+  @if (motocicletas.length === 0) {
+    <div class="sin-motos">
+      <p>📭 No hay motocicletas disponibles en el catálogo.</p>
+    </div>
+  }
+
+  <!-- @For: Recorrer todas las motocicletas -->
+  <div class="grid-motocicletas">
+    @for (moto of motocicletas; track moto.id) {
+      <div class="card-moto">
+        <!-- @If: Mostrar etiqueta según disponibilidad -->
+        @if (moto.disponible) {
+          <span class="badge disponible">Disponible</span>
+        } @else {
+          <span class="badge no-disponible">No disponible</span>
+        }
+
+        <h3>{{ moto.marca }} {{ moto.modelo }}</h3>
+
+        <div class="moto-detalles">
+          <p><strong>🔧 Cilindrada:</strong> {{ moto.cilindrada }} cc</p>
+          <p>
+            <strong>💰 Precio:</strong>
+            {{ moto.precio | currency: "$" : "symbol" : "1.0-0" }}
+          </p>
+          <!-- ↑ Pipe currency para formatear el precio -->
+        </div>
+
+        <!-- @If: Mensaje especial para motos de alta cilindrada -->
+        <!--@if (moto.cilindrada >= 1000) {
+          <div class="alta-cilindrada">⚡ Alta cilindrada</div>
+      } -->
+      </div>
+    }
+  </div>
+</div>
